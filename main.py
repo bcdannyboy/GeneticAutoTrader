@@ -297,7 +297,7 @@ if __name__ == '__main__':
     # Final testing
     final_results = []
     for ticker in stock_tickers:
-        start_date = (datetime.now() - timedelta(days=365)).strftime("%Y-%m-%d")  # Using a fixed 1-year timeframe
+        start_date = (datetime.now() - timedelta(days=random.choice(num_days_range))).strftime("%Y-%m-%d")
         end_date = datetime.now().strftime("%Y-%m-%d")
         spy_data = GatherData("SPY", start_date, end_date)
         stock_data = GatherData(ticker, start_date, end_date)
